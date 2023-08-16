@@ -52,7 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // change color while the other colors stay the same.
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: GoogleFonts.permanentMarker(),
+        ),
       ),
       body: const GradientContainer(),
     );
@@ -80,7 +83,7 @@ class GradientContainer extends StatelessWidget {
         // in the middle of the parent.
         child: Text(
           'This is my Dice App!',
-          style: GoogleFonts.amaticSc(
+          style: GoogleFonts.permanentMarker(
             color: Colors.white,
             fontSize: 28,
           ),
