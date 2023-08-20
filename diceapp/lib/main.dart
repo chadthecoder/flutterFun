@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'GradientContainer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,30 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
           style: GoogleFonts.permanentMarker(),
         ),
       ),
-      body: const GradientContainer(),
-    );
-  }
-}
-
-class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
-
-  @override
-  Widget build(context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(200, 6, 71, 41),
-            Color.fromARGB(150, 42, 253, 20),
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
-      child: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+      body: GradientContainer(
+        color1: const Color.fromARGB(200, 6, 71, 41),
+        color2: const Color.fromARGB(150, 42, 253, 20),
+        start: Alignment.bottomLeft,
+        finish: Alignment.centerRight,
         child: Text(
           'This is my Dice App!',
           style: GoogleFonts.permanentMarker(
