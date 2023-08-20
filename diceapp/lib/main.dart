@@ -61,8 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: GradientContainer(
         color1: const Color.fromARGB(200, 6, 71, 41),
         color2: const Color.fromARGB(150, 42, 253, 20),
-        start: Alignment.bottomLeft,
-        finish: Alignment.centerRight,
+        begin: Alignment.bottomLeft,
+        end: Alignment.centerRight,
         child: Text(
           'This is my Dice App!',
           style: GoogleFonts.permanentMarker(

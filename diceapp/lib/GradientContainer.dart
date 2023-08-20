@@ -5,12 +5,12 @@ class GradientContainer extends StatelessWidget {
     super.key,
     required this.color1,
     required this.color2,
-    required this.start,
-    required this.finish,
+    required this.begin,
+    required this.end,
     required this.child,
   });
   final Color color1, color2;
-  final Alignment start, finish;
+  final Alignment begin, end;
   final Widget child;
 
   @override
@@ -22,8 +22,8 @@ class GradientContainer extends StatelessWidget {
             color1,
             color2,
           ],
-          begin: start,
-          end: finish,
+          begin: begin,
+          end: end,
         ),
       ),
       child: child,
