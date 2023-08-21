@@ -1,4 +1,5 @@
 //import 'package:diceapp/styled_text.dart';
+import 'package:diceapp/widgets/dice_roller.dart';
 import 'package:diceapp/widgets/styled_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -72,33 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           backgroundColor: darkGreen,
         ),
-        body: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Image.asset(
-                'assets/images/dice-2.png',
-                width: 200,
-              ),
-              Image.asset(
-                'assets/images/dice-4.png',
-                width: 200,
-              ),
-              ElevatedButton(
-                onPressed: rollDice,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: darkGreen,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12), // <-- Radius
-                  ),
-                  //shape: const CircleBorder(),
-                  //padding: const EdgeInsets.all(24),
-                  //fixedSize: const Size(190, 190),
-                ),
-                child: const StyledText('Roll Dice!'),
-              ),
-            ],
-          ),
+        body: const Center(
+          child: DiceRoller(),
         ),
       ),
     );
