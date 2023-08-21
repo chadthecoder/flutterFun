@@ -1,3 +1,4 @@
+import 'package:diceapp/StyledText.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'GradientContainer.dart';
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
       home: MyHomePage(title: 'Chad Test Home Page'),
     );
@@ -46,29 +47,29 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(
-          widget.title,
-          style: GoogleFonts.permanentMarker(),
-        ),
-      ),
-      body: GradientContainer(
-        color1: const Color.fromARGB(200, 6, 71, 41),
-        color2: const Color.fromARGB(150, 42, 253, 20),
-        begin: Alignment.bottomLeft,
-        end: Alignment.centerRight,
-        child: Text(
-          'This is my Dice App!',
-          style: GoogleFonts.permanentMarker(
-            color: Colors.white,
-            fontSize: 28,
+    return GradientContainer(
+      color1: const Color.fromARGB(200, 6, 71, 41),
+      color2: const Color.fromARGB(150, 42, 253, 20),
+      begin: Alignment.bottomLeft,
+      end: Alignment.centerRight,
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          // TRY THIS: Try changing the color here to a specific color (to
+          // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
+          // change color while the other colors stay the same.
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Center(
+            child: Text(
+              widget.title,
+              style: GoogleFonts.permanentMarker(),
+            ),
           ),
+          backgroundColor: const Color.fromARGB(255, 4, 44, 4),
+        ),
+        body: const Center(
+          child: StyledText('My dice app!'),
         ),
       ),
     );

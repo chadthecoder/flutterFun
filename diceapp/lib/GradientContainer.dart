@@ -9,6 +9,7 @@ class GradientContainer extends StatelessWidget {
     required this.end,
     required this.child,
   });
+
   final Color color1, color2;
   final Alignment begin, end;
   final Widget child;
