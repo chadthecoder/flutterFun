@@ -1,7 +1,9 @@
-import 'package:diceapp/StyledText.dart';
+//import 'package:diceapp/styled_text.dart';
+import 'package:diceapp/widgets/styled_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'GradientContainer.dart';
+import 'widgets/gradient_container.dart';
+import 'actions/roll_dice.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,6 +41,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final Color darkGreen = const Color.fromARGB(255, 4, 44, 4);
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -66,10 +70,35 @@ class _MyHomePageState extends State<MyHomePage> {
               style: GoogleFonts.permanentMarker(),
             ),
           ),
-          backgroundColor: const Color.fromARGB(255, 4, 44, 4),
+          backgroundColor: darkGreen,
         ),
-        body: const Center(
-          child: StyledText('My dice app!'),
+        body: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.asset(
+                'assets/images/dice-2.png',
+                width: 200,
+              ),
+              Image.asset(
+                'assets/images/dice-4.png',
+                width: 200,
+              ),
+              ElevatedButton(
+                onPressed: rollDice,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: darkGreen,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12), // <-- Radius
+                  ),
+                  //shape: const CircleBorder(),
+                  //padding: const EdgeInsets.all(24),
+                  //fixedSize: const Size(190, 190),
+                ),
+                child: const StyledText('Roll Dice!'),
+              ),
+            ],
+          ),
         ),
       ),
     );
