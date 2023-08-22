@@ -12,23 +12,15 @@ class DiceRoller extends StatefulWidget {
 
 class _DiceRollerState extends State<DiceRoller> {
   final Color darkGreen = const Color.fromARGB(255, 4, 44, 4);
-  final diceFiles = <String>[
-    'assets/images/dice-1.png',
-    'assets/images/dice-2.png',
-    'assets/images/dice-3.png',
-    'assets/images/dice-4.png',
-    'assets/images/dice-5.png',
-    'assets/images/dice-6.png'
-  ];
-  String dice1 = 'assets/images/dice-1.png', dice2 = 'assets/images/dice-6.png';
+  int dice1 = 1, dice2 = 6;
+  late Random rand;
 
   void rollDice() {
-    Random rand;
     rand = Random();
-    int randNum1 = rand.nextInt(6), randNum2 = rand.nextInt(6);
+    int randNum1 = rand.nextInt(6) + 1, randNum2 = rand.nextInt(6) + 1;
     setState(() {
-      dice1 = diceFiles[randNum1];
-      dice2 = diceFiles[randNum2];
+      dice1 = randNum1;
+      dice2 = randNum2;
     });
     //[diceFiles[randNum1], diceFiles[randNum2]];
   }
@@ -39,11 +31,11 @@ class _DiceRollerState extends State<DiceRoller> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Image.asset(
-          dice1,
+          'assets/images/dice-$dice1.png',
           width: 200,
         ),
         Image.asset(
-          dice2,
+          'assets/images/dice-$dice2.png',
           width: 200,
         ),
         ElevatedButton(

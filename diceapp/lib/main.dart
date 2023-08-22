@@ -1,10 +1,8 @@
 //import 'package:diceapp/styled_text.dart';
 import 'package:diceapp/widgets/dice_roller.dart';
-import 'package:diceapp/widgets/styled_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'widgets/gradient_container.dart';
-import 'actions/roll_dice.dart';
 
 void main() {
   runApp(const MyApp());
