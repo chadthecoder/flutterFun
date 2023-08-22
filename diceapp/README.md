@@ -1,5 +1,9 @@
 # diceapp
 
+This is my dice app following tutorials and reading docs.
+
+Rolling dice sound from #add credit for audio
+
 A new Flutter project.
 
 ## Getting Started
