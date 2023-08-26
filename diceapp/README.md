@@ -1,3 +1,7 @@
+# Sound Credit
+
+Thank you to u_qpfzpydtro from Pixabay.com for the Dice Roll sound!
+
 # diceapp
 
 This is my dice app following tutorials and reading docs.
